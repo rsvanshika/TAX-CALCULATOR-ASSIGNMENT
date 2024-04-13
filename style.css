@@ -80,7 +80,11 @@ input, select {
 button:hover {
     background-color: #6045a0;
 }
-
+/* empty field error */
+#errorField{
+    color:red;
+    text-align: center;
+}
 /* Styling for informational tooltips on hover */
 .info:hover::after {
     content:attr(title);
@@ -150,7 +154,7 @@ button:hover {
 }
 /* Styling for popup */
 .popup {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 50%; 
     left: 50%; 

@@ -22,6 +22,14 @@ function calculateTax() {
     var deductions = parseFloat(document.getElementById('deductions').value) ;
     var ageGroup = document.getElementById('age').value;
 
+     // Check if any field is empty
+     if (!grossIncome || !extraIncome || !deductions || !ageGroup) {
+        document.getElementById('errorField').textContent = 'Please fill in all fields.';
+        return; // Exit the function
+    } else {
+        document.getElementById('errorField').textContent = ''; // Clear error message if all fields are filled
+    }
+
 
     // Calculate overall income after deductions
     var overallIncome = grossIncome + extraIncome - deductions;
