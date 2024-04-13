@@ -56,7 +56,7 @@ function calculateTax() {
         console.log(tax)
 
         // Display tax value
-        document.getElementById('taxValue').textContent = tax.toFixed(2);
+        document.getElementById('taxValue').textContent = '₹ ' +tax.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
     // Show pop-up
