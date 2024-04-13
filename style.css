@@ -1,0 +1,224 @@
+/* Resetting default margins, paddings, and setting font size */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 'Poppins';
+    box-sizing: border-box;
+}
+
+/* Styling the main container */
+.container {
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #fff;
+    border: solid rgba(128, 128, 128, 0.261) 2px;
+    padding: 30px;
+}
+
+/* Adjustments for the form and field within the container */
+form {
+    margin-top: 40px;
+}
+
+.field
+{
+  position: relative;
+}
+
+/* Styling for labels */
+label {
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* Styling for input and select elements */
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for informational tooltips */
+.info {
+    margin: 2px;
+    font-size: smaller;
+    color: rgba(128, 128, 128, 0.693);
+   
+}
+
+/* Styling for error messages */
+.error {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    color: rgba(128, 128, 128, 0.693);
+}
+
+/* Styling for submit button */
+#submit {
+    width: 100%;
+    background-color: #474780;
+    color: white;
+    padding: 14px 20px;
+    margin: 30px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+button:hover {
+    background-color: #6045a0;
+}
+
+/* Styling for informational tooltips on hover */
+.info:hover::after {
+    content:attr(title);
+    position: absolute;
+    max-width: 100px;
+    background-color:  #6045a0;
+    color: white; 
+    padding: 8px 10px;
+     white-space: wrap;
+    border-radius: 4px; 
+    font-size: 14px; 
+    bottom: calc(100% + 5px); 
+    right:20px;
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.info:hover::after {
+    opacity: 1; /* Show tooltip on hover */
+}
+
+.info:hover::before{
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    top:-10px;
+    right:180px;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    background-color: #6045a0;
+   
+}
+
+
+/* Styling for error messages on hover */
+.error:hover::after {
+    content: "Please enter number only";
+    position: absolute;
+    background-color:  #6045a0; 
+    color: white; 
+    padding: 8px 10px; 
+    white-space: nowrap;
+    border-radius: 4px; 
+    font-size: 14px;
+    bottom: calc(100% + 5px); 
+    left:80px;
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+.error:hover::before{
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top:-10px;
+    left: 10px;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    background-color: #6045a0;
+   
+}
+
+
+.error:hover::after {
+    opacity: 1; /* Show tooltip on hover */
+}
+/* Styling for popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 100px;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    width: 550px;
+    margin-top: 5%;
+    padding: 30px;
+    background-color: #fff;
+    border: solid rgba(128, 128, 128, 0.261) 2px;
+}
+
+/* Styling for popup content */
+.popup-content {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Styling for close button in popup */
+.close {
+    width: 20%;
+    background-color: #474780;
+    color: white;
+    padding: 14px 20px;
+    margin: auto;
+    margin-top: 60px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Styling for tax value in popup */
+#taxValue {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
