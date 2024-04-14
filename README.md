@@ -26,7 +26,7 @@ This is a simple web-based tax calculator application built using HTML, CSS, and
 3. Click on the "Submit" button to calculate your tax.
 4. View the calculated tax amount in the popup window.
 5. To close the popup and clear input fields for a new calculation, click on the "Close" button.
-<!-- -----Some additional features------- -->
+###Some additional features
 6. To view comprehensive details of financial data click on detail
 7. To remove the popup and clear input fields for a new calculation, click on the "exit" button.
 
