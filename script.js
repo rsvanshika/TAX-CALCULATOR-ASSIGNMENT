@@ -28,6 +28,7 @@ function showDetails() {
     // Display tax details in the popup
     const detailsSection = document.getElementById("details");
     detailsSection.innerHTML = `
+             <h1> Financial details </h1>
         <table>
             <tr>
                 <td>Income:</td>

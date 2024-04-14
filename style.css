@@ -11,13 +11,11 @@
 .main-container {
     /* Set background image */
     width: 100%;
-    margin: 0;
-    background-image: url('Home.png');
-   
+   background-image: url('Home.png');
     background-position: center;
     background-size: cover;
     height: 100vh;
-    padding: 20px;
+    padding: 30px;
 }
 /* Styling for the main container's heading */
 .main-container h1{
@@ -25,19 +23,13 @@
     font-family:'Times New Roman', Times, serif;
     font-weight: 600;
     color: #d1d1cf;
-
-    
-    
-
+    margin-bottom: 20px;
 }
 /* Styling the container */
 .container {
-   
-    width: 400px;
-    position: fixed;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+    width:90%;
+    max-width: 400px;
+    margin:auto;
     border: solid #242423(128, 128, 128, 0.261) 2px;
     padding: 30px;
     background-color:white;
@@ -46,7 +38,7 @@
 
 /* Adjustments for the form and field within the container */
 form {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 /* Styling for the field */
 .field
@@ -223,19 +215,19 @@ input, select {
 }
 /* Styling for popup */
 .popup {
-    display: none;
+    /* display: none; */
     position: fixed;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #242423(0, 0, 0, 0.5);
     z-index: 999;
-    width: 550px;
-    height: 95vh;
-    
+    width: 90%; /* Adjusted for responsiveness */
+    max-width: 550px; /* Added maximum width for larger screens */
+    height: 85vh;
     padding: 30px;
-    background-color:#9c9997;
-    border: solid #242423(128, 128, 128, 0.261) 2px;
+    background-color: #9c9997;
+    border: solid #242423(128, 128, 128, 0.261) 2px
 }
 .popup h1,p{
     color:#fff;
@@ -258,7 +250,6 @@ input, select {
 .buttons{
     margin-top: 50px;
     display: flex;
-    
     flex-direction:row;
     justify-content: space-around;
 }
@@ -281,25 +272,30 @@ button:hover {
 /* Styling for details content */
 
 #details{
-
     display: none;
     position: fixed;
-    top: 74%; 
+    top: 50%;
     left: 50%;
-    
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     background-color: #242423(0, 0, 0, 0.5);
     z-index: 999;
-    width: 550px;
-   padding: 30px;
+    width: 90%; /* Adjusted for responsiveness */
+    max-width: 550px; /* Added maximum width for larger screens */
+    padding: 30px;
     background-color: #fff;
     border: solid #242423(128, 128, 128, 0.261) 2px;
 
 }
+
+#details h1{
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
   /* styling table  */
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 90%;
     margin:auto;
    
  
@@ -333,6 +329,7 @@ tr:nth-child(even) {
     background-color:  #242423;
     border: solid  #242423;
 }
+
 
 
 
