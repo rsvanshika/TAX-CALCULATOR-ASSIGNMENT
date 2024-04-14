@@ -2,15 +2,15 @@
 * {
     margin: 0;
     padding: 0;
-   
-  font-family: "Poppins", sans-serif;
+
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
 /* Styling the main container */
 .container {
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
     position: fixed;
     top: 50%; 
     left: 50%; 
@@ -52,7 +52,7 @@ input, select {
     margin: 2px;
     font-size: smaller;
     color: rgba(128, 128, 128, 0.693);
-   
+
 }
 
 /* Styling for error messages */
@@ -65,7 +65,7 @@ input, select {
 }
 
 /* Styling for submit button */
-#submit {
+#calculateButton {
     width: 100%;
     background-color: #474780;
     color: white;
@@ -93,7 +93,7 @@ button:hover {
     background-color:  #6045a0;
     color: white; 
     padding: 8px 10px;
-     white-space: wrap;
+    white-space: wrap;
     border-radius: 4px; 
     font-size: 14px; 
     bottom: calc(100% + 5px); 
@@ -116,7 +116,7 @@ button:hover {
     right:180px;
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
     background-color: #6045a0;
-   
+
 }
 
 
@@ -145,7 +145,7 @@ button:hover {
     left: 10px;
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
     background-color: #6045a0;
-   
+
 }
 
 
@@ -154,7 +154,7 @@ button:hover {
 }
 /* Styling for popup */
 .popup {
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 50%; 
     left: 50%; 
@@ -162,7 +162,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
     width: 550px;
-    height: 60vh;
+    height: 70vh;
     
     padding: 30px;
     background-color: #fff;
@@ -174,17 +174,76 @@ button:hover {
     text-align: center;
     margin-top: 80px;
 }
+.buttons{
+    margin-top: 50px;
+    display: flex;
+    /* background-color: #6045a0; */
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+
+#details{
+
+    display: none;
+    position: fixed;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    width: 550px;
+    padding: 30px;
+    background-color: #fff;
+    border: solid rgba(128, 128, 128, 0.261) 2px;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+ 
+}
+
+table, th, td {
+    border: 1px solid black;
+   
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #edd6ee;
+  }
+
+.exit{
+    position:fixed;
+    width:20px;
+    right:0;
+    bottom: 0;
+    background-color: rgb(247, 20, 20);
+    border: solid rgb(247, 20, 20) 2px;
+}
+
 
 /* Styling for close button in popup */
-.close {
-    width: 20%;
+.close,.detailsButton{
+    
+    width:100px;
     background-color: #474780;
     color: white;
-    padding: 14px 20px;
-    margin: auto;
-    margin-top: 60px;
-    border: none;
+    padding: 10px 10px;
+     border: none;
+     text-align: center;
     border-radius: 4px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -195,37 +254,44 @@ button:hover {
     font-weight: 600;
 }
 
+.quesmark-info{
+    background-color: #6045a0;
+    width: 120px;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+}
 
+.quesmark-info-wrapper i{
+    position: relative;
+    z-index: 1000px;
+    cursor: pointer;
+    color: rgba(128, 128, 128, 0.693);
+    font-size: smaller;
+}
 
+.quesmark-info-wrapper i .quesmark-info{
+    position: absolute;
+    left: -8px;
+    top: -10px;
+    transform: translate(0, -100%);
+    display: none;
+}
 
+.quesmark-info-wrapper i:hover .quesmark-info{
+    display: block;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
+.quesmark-info-wrapper i .quesmark-info .arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #6045a0;
+  position: absolute;
+  bottom: 1px;
+  left: 10px;
+  transform: translate(0, 100%);
+}
 
