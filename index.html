@@ -1,130 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TAX CALCULATOR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>TAX CALCULATOR</title>
-
 </head>
 
 <body>
     <!-- Main container -->
-    <div class="container">
-        <!-- Tax input form -->
-        <form action="#">
-            <!-- Input field for gross annual income -->
-
-            <div class="field">
-                <div class="quesmark-info-wrapper">
-                 <label for="grossIncome">Enter gross annual income</label>
-                 <i class="fa-regular fa-circle-question">
-                     <div class="quesmark-info">
-                        Gross annual income is your total salary in a year before any deductions
-                        <div class="arrow-down"></div>
+    <div class="main-container">
+        <h1>TAX CALCULATOR</h1>
+        <div class="container">
+            <!-- Tax input form -->
+            <form action="#">
+                <!-- Input field for gross annual income -->
+                <div class="field">
+                    <div class="quesmark-info-wrapper">
+                        <label for="grossIncome">Enter gross annual income</label>
+                        <i class="fa-regular fa-circle-question">
+                            <div class="quesmark-info">
+                                Gross annual income is your total salary in a year before any deductions
+                                <div class="arrow-down"></div>
+                            </div>
+                        </i>
                     </div>
-                </i>
+                    <input type="text" class="numInput" id="grossIncome" placeholder="Enter gross annual income" oninput="validateInput(this)"> 
+                    <!-- Error icon for validation feedback -->
+                    <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
+                </div>
+    
+                <!-- Input field for extra income -->
+                <div class="field">
+                    <div class="quesmark-info-wrapper">
+                        <label for="extraIncome">Enter extra income</label>
+                        <i class="fa-regular fa-circle-question">
+                            <div class="quesmark-info">
+                                Extra income from other sources
+                                <div class="arrow-down"></div>
+                            </div>
+                        </i>
+                    </div>
+                    <input type="text" class="numInput" id="extraIncome" placeholder="Enter extra income from other source" oninput="validateInput(this)">
+                    <!-- Error icon for validation feedback -->
+                    <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
+                </div>
+    
+                <!-- Select field for age group -->
+                <div class="field">
+                    <div class="quesmark-info-wrapper">
+                        <label for="age">Enter age group</label>
+                        <i class="fa-regular fa-circle-question">
+                            <div class="quesmark-info">
+                                Select your age group
+                                <div class="arrow-down"></div>
+                            </div>
+                        </i>
+                    </div>
+                    <!-- Dropdown for age selection -->
+                    <select name="" id="age">
+                        <option value=""></option>
+                        <option value="option1">&lt;40</option>
+                        <option value="option2">&ge;40 &lt;60</option>
+                        <option value="option3">&ge;60</option>
+                    </select>
+                </div>
+    
+                <!-- Input field for total application deductions -->
+                <div class="field">
+                    <div class="quesmark-info-wrapper">
+                        <label for="deductions">Enter total application deductions</label>
+                        <i class="fa-regular fa-circle-question">
+                            <div class="quesmark-info">
+                                Total applicable deductions
+                                <div class="arrow-down"></div>
+                            </div>
+                        </i>
+                    </div>
+                    <!-- Input field for deductions -->
+                    <input type="text" class="numInput" id="deductions" oninput="validateInput(this)" placeholder="Enter total applicable deduction">
+                    <!-- Error icon for validation feedback -->
+                    <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
+                </div>
+    
+                <!-- Submit button -->
+                <input type="button" onclick="calculateTax()" value="Submit" id="calculateButton">
+    
+                <!-- Error message for empty field -->
+                <p id="errorField"></p>
+            </form>
+        </div>
+    
+        <!-- Popup for displaying tax calculation result -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <!-- Title for the popup -->
+                <h1>Your overall Income will be</h1>
+                <!-- Element to display tax value -->
+                <p id="taxValue"></p>
+                <!-- Message indicating tax deductions -->
+                <p>after tax deductions</p>
             </div>
-            <!-- Input field for gross annual income -->
-            <input type="text" class="numInput" id="grossIncome" placeholder="Enter gross annual income" oninput="validateInput(this)"> 
-            <!-- Error icon for validation feedback -->
-            <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
-        </div>
-
-        <!-- Input field for extra income -->
-        <div class="field">
-
-            <div class="quesmark-info-wrapper">
-               <label for="grossIncome">Enter extra income</label>
-               <i class="fa-regular fa-circle-question">
-                   <div class="quesmark-info">
-                    Extra income from other sources
-                    <div class="arrow-down"></div>
-                   </div>
-               </i>
-           </div>
-            <!-- Input field for extra income -->
-            <input type="text" class="numInput" id="extraIncome" placeholder="Enter extra income from other source" oninput="validateInput(this)">
-            <!-- Error icon for validation feedback -->
-            <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
-        </div>
-
-        <!-- Select field for age group -->
-        <div class="field">
-            <div class="quesmark-info-wrapper">
-               <label for="grossIncome">Enter age group</label>
-               <i class="fa-regular fa-circle-question">
-                   <div class="quesmark-info">
-                    Select your age group
-                    <div class="arrow-down"></div>
-                   </div>
-               </i>
-           </div>
-            <!-- Dropdown for age selection -->
-            <select name="" id="age">
-                <option value=""></option>
-                <option value="option1">&lt;40</option>
-                <option value="option2">&ge;40 &lt;60</option>
-                <option value="option3">&ge;60</option>
-            </select>
-        </div>
-
-        <!-- Input field for total application deductions -->
-        <div class="field">
-
-            <div class="quesmark-info-wrapper">
-               <label for="grossIncome">Enter total application deductions</label>
-               <i class="fa-regular fa-circle-question">
-                   <div class="quesmark-info">
-                    Total applicable deductions
-                    <div class="arrow-down"></div>
-                   </div>
-               </i>
-           </div>
-            <!-- Input field for deductions -->
-            <input type="text" class="numInput" id="deductions" oninput="validateInput(this)" placeholder="Enter total applicable deduction">
-            <!-- Error icon for validation feedback -->
-            <span class="error"><i class="fa-solid fa-circle-exclamation"></i></span><br>
-        </div>
-
-        <!-- Submit button -->
-        <input type="button" onclick="calculateTax()" value="Submit" id="calculateButton">
-
-        <br>
-        <!-- error for empty field -->
-        <p id="errorField"></p>
-    </form>
-</div>
-
-<!-- Popup for displaying tax calculation result -->
-<div class="popup" id="popup">
-    <div class="popup-content">
-        <!-- Title for the popup -->
-        <h1>Your overall Income will be</h1>
-        <!-- Element to display tax value -->
-        <p id="taxValue">22222</p>
-        <!-- Message indicating tax deductions -->
-        <p>after tax deductions</p>
-    </div>    
-        <!-- Close button for the popup -->
-       
+            <!-- Buttons -->
+            <div class="buttons">
+                <div class="but1"><button class="detailsButton" onclick="showDetails()">Details</button></div>
+                <div class="but1"><button class="close" onclick="closePopup()">Close</button></div>
+            </div>
     
-    <div class="buttons">
-        <div class="but1"> <button class="detailsButton" onclick="showDetails()">Details</button></div>
-        <div class="but1"><button class="close" onclick="closePopup()">Close</div></div>
+            <!-- Details section -->
+            <div class="details" id="details">
+                
+            </div>
+        </div>
     </div>
 
-    <div class="details" id="details">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt cum eveniet alias tempora ducimus, asperiores nulla? Sapiente nam at itaque rerum dicta, magni, consequuntur, nostrum numquam illo ea nulla corporis.
-       
-    </div>
+    <!-- Scripts -->
+    <script src="script.js"></script>
     
-      
-
-</div>
-<script src="script.js"></script>
-</body>
 </html>

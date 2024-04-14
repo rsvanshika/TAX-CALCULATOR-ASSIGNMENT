@@ -6,24 +6,49 @@
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
+ /* Styling for the main container */
 
-/* Styling the main container */
+.main-container {
+    /* Set background image */
+    width: 100%;
+    margin: 0;
+    background-image: url('Home.png');
+   
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 20px;
+}
+/* Styling for the main container's heading */
+.main-container h1{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: #d1d1cf;
+
+    
+    
+
+}
+/* Styling the container */
 .container {
-    width: 90%;
-    max-width: 500px;
+   
+    width: 400px;
     position: fixed;
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
-    border: solid rgba(128, 128, 128, 0.261) 2px;
+    border: solid #242423(128, 128, 128, 0.261) 2px;
     padding: 30px;
+    background-color:white;
+  
 }
 
 /* Adjustments for the form and field within the container */
 form {
     margin-top: 40px;
 }
-
+/* Styling for the field */
 .field
 {
   position: relative;
@@ -51,7 +76,7 @@ input, select {
 .info {
     margin: 2px;
     font-size: smaller;
-    color: rgba(128, 128, 128, 0.693);
+    color: #242423(128, 128, 128, 0.693);
 
 }
 
@@ -61,13 +86,13 @@ input, select {
     position: absolute;
     right: 5%;
     top: 50%;
-    color: rgba(128, 128, 128, 0.693);
+    color: #242423(128, 128, 128, 0.693);
 }
 
 /* Styling for submit button */
 #calculateButton {
     width: 100%;
-    background-color: #474780;
+    background-color: #242423;
     color: white;
     padding: 14px 20px;
     margin: 30px 0;
@@ -77,185 +102,19 @@ input, select {
 }
 
 /* Hover effect for submit button */
-button:hover {
-    background-color: #6045a0;
+#calculateButton:hover {
+    background-color:#44423b;
 }
-/* empty field error */
+/* Styling for empty field error */
 #errorField{
     color:red;
     text-align: center;
 }
-/* Styling for informational tooltips on hover */
-.info:hover::after {
-    content:attr(title);
-    position: absolute;
-    max-width: 100px;
-    background-color:  #6045a0;
-    color: white; 
-    padding: 8px 10px;
-    white-space: wrap;
-    border-radius: 4px; 
-    font-size: 14px; 
-    bottom: calc(100% + 5px); 
-    right:20px;
-    transform: translateX(-50%); 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
-}
 
-.info:hover::after {
-    opacity: 1; /* Show tooltip on hover */
-}
-
-.info:hover::before{
-    content: " ";
-    position: absolute;
-    width: 15px;
-    height: 10px;
-    top:-10px;
-    right:180px;
-    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-    background-color: #6045a0;
-
-}
-
-
-/* Styling for error messages on hover */
-.error:hover::after {
-    content: "Please enter number only";
-    position: absolute;
-    background-color:  #6045a0; 
-    color: white; 
-    padding: 8px 10px; 
-    white-space: nowrap;
-    border-radius: 4px; 
-    font-size: 14px;
-    bottom: calc(100% + 5px); 
-    left:80px;
-    transform: translateX(-50%); 
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-}
-.error:hover::before{
-    content: " ";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top:-10px;
-    left: 10px;
-    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-    background-color: #6045a0;
-
-}
-
-
-.error:hover::after {
-    opacity: 1; /* Show tooltip on hover */
-}
-/* Styling for popup */
-.popup {
-    /* display: none; */
-    position: fixed;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    width: 550px;
-    height: 70vh;
-    
-    padding: 30px;
-    background-color: #fff;
-    border: solid rgba(128, 128, 128, 0.261) 2px;
-}
-
-/* Styling for popup content */
-.popup-content {
-    text-align: center;
-    margin-top: 80px;
-}
-.buttons{
-    margin-top: 50px;
-    display: flex;
-    /* background-color: #6045a0; */
-    flex-direction:row;
-    justify-content: space-around;
-}
-
-
-#details{
-
-    display: none;
-    position: fixed;
-    top: 70%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    width: 550px;
-    padding: 30px;
-    background-color: #fff;
-    border: solid rgba(128, 128, 128, 0.261) 2px;
-
-}
-
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: auto;
- 
-}
-
-table, th, td {
-    border: 1px solid black;
-   
-}
-
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-tr:nth-child(even) {
-    background-color: #edd6ee;
-  }
-
-.exit{
-    position:fixed;
-    width:20px;
-    right:0;
-    bottom: 0;
-    background-color: rgb(247, 20, 20);
-    border: solid rgb(247, 20, 20) 2px;
-}
-
-
-/* Styling for close button in popup */
-.close,.detailsButton{
-    
-    width:100px;
-    background-color: #474780;
-    color: white;
-    padding: 10px 10px;
-     border: none;
-     text-align: center;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* Styling for tax value in popup */
-#taxValue {
-    margin: 10px 0;
-    font-size: 24px;
-    font-weight: 600;
-}
-
+/* Styling for the informational tooltip icon */
 .quesmark-info{
-    background-color: #6045a0;
+    background-color: #242423;
+    
     width: 120px;
     padding: 8px 10px;
     color: #fff;
@@ -267,7 +126,7 @@ tr:nth-child(even) {
     position: relative;
     z-index: 1000px;
     cursor: pointer;
-    color: rgba(128, 128, 128, 0.693);
+    color: #242423(128, 128, 128, 0.693);
     font-size: smaller;
 }
 
@@ -288,10 +147,196 @@ tr:nth-child(even) {
   height: 0; 
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 7px solid #6045a0;
+  border-top: 7px solid #242423;
   position: absolute;
   bottom: 1px;
   left: 10px;
   transform: translate(0, 100%);
 }
+
+/* Styling for informational tooltips on hover */
+.info:hover::after {
+    content:attr(title);
+    position: absolute;
+    max-width: 100px;
+    background-color:  #242423;
+    color: white; 
+    padding: 8px 10px;
+    white-space: wrap;
+    border-radius: 4px; 
+    font-size: 14px; 
+    bottom: calc(100% + 5px); 
+    right:20px;
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.info:hover::after {
+    opacity: 1; 
+}
+
+.info:hover::before{
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    top:-10px;
+    right:180px;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    background-color: #242423;
+
+}
+
+
+/* Styling for error messages on hover */
+.error:hover::after {
+    content: "Please enter number only";
+    position: absolute;
+    background-color:  #242423; 
+    color: white; 
+    padding: 8px 10px; 
+    white-space: nowrap;
+    border-radius: 4px; 
+    font-size: 14px;
+    bottom: calc(100% + 5px); 
+    left:80px;
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+.error:hover::before{
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top:-10px;
+    left: 10px;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    background-color: #242423;
+
+}
+
+
+.error:hover::after {
+    opacity: 1; /* Show tooltip on hover */
+}
+/* Styling for popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #242423(0, 0, 0, 0.5);
+    z-index: 999;
+    width: 550px;
+    height: 95vh;
+    
+    padding: 30px;
+    background-color:#9c9997;
+    border: solid #242423(128, 128, 128, 0.261) 2px;
+}
+.popup h1,p{
+    color:#fff;
+
+}
+.popup #taxValue{
+    color:#242423;
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+
+/* Styling for popup content */
+.popup-content {
+    text-align: center;
+    margin-top: 80px;
+}
+.buttons{
+    margin-top: 50px;
+    display: flex;
+    
+    flex-direction:row;
+    justify-content: space-around;
+}
+/* Styling for close button in popup */
+.close,.detailsButton{
+    
+    width:100px;
+    background-color: #242423;
+    color: white;
+    padding: 10px 10px;
+     border: none;
+     text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover {
+    background-color:#44423b;
+}
+/* Styling for details content */
+
+#details{
+
+    display: none;
+    position: fixed;
+    top: 74%; 
+    left: 50%;
+    
+    transform: translate(-50%, -50%); 
+    background-color: #242423(0, 0, 0, 0.5);
+    z-index: 999;
+    width: 550px;
+   padding: 30px;
+    background-color: #fff;
+    border: solid #242423(128, 128, 128, 0.261) 2px;
+
+}
+  /* styling table  */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin:auto;
+   
+ 
+}
+
+table, th, td {
+    border: 1px solid black;
+    
+   
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color:#4e4f50;
+  }
+
+  /* style the exit button */
+.exit{
+    position:fixed;
+    width:20px;
+    right:0;
+    bottom: 0;
+    color:#fff;
+    background-color:  #242423;
+    border: solid  #242423;
+}
+
+
+
+
+
+
 
