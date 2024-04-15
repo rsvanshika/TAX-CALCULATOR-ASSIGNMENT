@@ -23,7 +23,7 @@
     font-family:'Times New Roman', Times, serif;
     font-weight: 600;
     color: #d1d1cf;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 /* Styling the container */
 .container {
@@ -215,16 +215,16 @@ input, select {
 }
 /* Styling for popup */
 .popup {
-    /* display: none; */
+    display: none;
     position: fixed;
-    top: 53%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #242423(0, 0, 0, 0.5);
     z-index: 999;
     width: 90%; /* Adjusted for responsiveness */
     max-width: 550px; /* Added maximum width for larger screens */
-    height: 85vh;
+    height: 80vh;
     padding: 30px;
     background-color: #9c9997;
     border: solid #242423(128, 128, 128, 0.261) 2px
@@ -248,7 +248,7 @@ input, select {
     margin-top: 80px;
 }
 .buttons{
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     flex-direction:row;
     justify-content: space-around;
@@ -284,7 +284,7 @@ button:hover {
     padding: 30px;
     background-color: #fff;
     border: solid #242423(128, 128, 128, 0.261) 2px;
-
+    height: 60vh;
 }
 
 #details h1{
@@ -296,15 +296,15 @@ button:hover {
 table {
     border-collapse: collapse;
     width: 90%;
-    margin:auto;
+    margin:-50px auto;
+    
    
  
 }
 
 table, th, td {
     border: 1px solid black;
-    
-   
+      
 }
 
 th, td {
